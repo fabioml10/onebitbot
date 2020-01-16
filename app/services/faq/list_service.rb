@@ -29,7 +29,7 @@ module FaqModule
         end
         response += "\n\n"
       end
-      (faqs.count > 0)? response : "Nada encontrado"
+      (faqs.count > 0)? response : "Nada encontrado por aqui."
     end
   end
 end
