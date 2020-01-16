@@ -12,9 +12,9 @@ module FaqModule
 
       key = "trnsl.1.1.20200115T143401Z.c576aeaaa427e198.5da5b5f78ee0d26cb1147e8ee9c5d01a2aec91a2"
       url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{key}&text=#{@word}&lang=pt-en"
-      # res = RestClient.get url
+      res = RestClient.get(url)
       # value = JSON.parse(res.body)
-      return url
+      return res
 
       # response = "O termo #{@word} traduzido para o inglês é: #{value}"
       # return response
