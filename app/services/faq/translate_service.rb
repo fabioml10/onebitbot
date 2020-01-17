@@ -7,14 +7,18 @@ module FaqModule
     end
  
     def call
-      
-      return 'Informe uma palavra.' if @word == nil
-      return 'Informe o idioma.' if @lang == nil
 
-      lang_param = "pt-en"
-      if @lang[0,1].upcase == "P"
+      return 'Informe o termo a ser traduzido.' if @word == nil || @word.blank?
+      return 'Informe o idioma.' if @lang == nil || @lang.blank?
+
+      lang_param = nil
+      if @lang.upcase == "PORTUGUES" || @lang.upcase == "PORTUGUÊS"
         lang_param = "en-pt"
+      elsif @lang.upcase == "INGLES" || @lang.upcase == "INGLÊS"
+        lang_param = "pt-en"
       end
+
+      return 'Informe um idioma válido, portugues ou ingles.' if lang_param == nil
 
       key = "trnsl.1.1.20200115T143401Z.c576aeaaa427e198.5da5b5f78ee0d26cb1147e8ee9c5d01a2aec91a2"
       url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=#{key}&text=#{@word}&lang=#{lang_param}"
