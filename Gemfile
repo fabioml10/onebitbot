@@ -1,5 +1,5 @@
 source :rubygems
-gem 'sinatra', '~> 2.0.5'
+gem 'sinatra', '~> 2.2.3'
 gem "activerecord", '~> 5.2.2'
 gem "sinatra-activerecord", '~> 2.0.14'
 gem 'pg'
